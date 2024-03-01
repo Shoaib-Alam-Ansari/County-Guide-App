@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Guide App</title>
+  <!-- Links an external stylesheet for styling -->
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Preconnects to external resources to reduce DNS resolution time -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Links an external font stylesheet from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Main container for the app -->
+  <div class="container">
+    <!-- Container for the search input and button -->
+    <div class="search-wrapper">
+      <!-- Input field for entering the country name -->
+      <input
+        type="text"
+        id="country-inp"
+        placeholder="Enter a country name here..."
+      />
+      <!-- Button to trigger the search -->
+      <button id="search-btn">Search</button>
+    </div>
+    <!-- Container to display search results -->
+    <div id="result"></div>
+  </div>
+  <!-- Link to the JavaScript file containing app logic -->
+  <script src="./script.js"></script>
+</body>
+</html>
