@@ -2,11 +2,15 @@
 let searchBtn = document.getElementById("search-btn");
 // Selects the country input element by its ID and stores it in the variable 'countryInp'
 let countryInp = document.getElementById("country-inp");
+// Selects the loader element by its ID and stores it in the variable 'loader'
+let loader = document.getElementById("loader");
 // Selects the result container element by its ID and stores it in the variable 'result'
 let result = document.getElementById("result");
 
 // Adds a click event listener to the search button
 searchBtn.addEventListener("click", () => {
+  // Display loader
+  loader.classList.remove("hidden");
   // Retrieves the value entered in the country input field and stores it in the variable 'countryName'
   let countryName = countryInp.value;
   // Constructs the final URL for fetching country data based on the entered country name
@@ -17,6 +21,8 @@ searchBtn.addEventListener("click", () => {
   fetch(finalUrl)
     .then((response) => response.json())
     .then((data) => {
+      // Hide loader
+      loader.classList.add("hidden");
       // Populates the result container with country information fetched from the API
       result.innerHTML = `
         <img src="${data[0].flags.svg}" class="flag-img">
@@ -66,6 +72,8 @@ searchBtn.addEventListener("click", () => {
     })
     // Handles errors in fetching data
     .catch(() => {
+      // Hide loader
+      loader.classList.add("hidden");
       // Checks if the input field is empty
       if (countryName.length == 0) {
         result.innerHTML = `<h3>The input field cannot be empty</h3>`;
